@@ -1,0 +1,53 @@
+<aside id="drawerEl" data-prevent-default="true" data-mouse-events="true">
+  <div class="left-side">
+      <a class="navbar-brand" href="/">
+          <img class="img_preview" width="24" height="24" src="/assets/logo-ddfa93a2f73e99e05cc16fad38a1bce6afe96cff1f88b396c1cd295487885384.svg">
+      </a>
+      <div class="DrawerBackIconWrapper">
+	    	<div class="DrawerTriggerInner">
+                <button id="drawerEl_close" class="GlobalItemInner" href="#">
+					<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" role="presentation"><path d="M8.414 11.5H18a1 1 0 0 1 0 2H8.414l3.793 3.793a1 1 0 0 1-1.414 1.414l-5.5-5.5a1 1 0 0 1 0-1.414l5.5-5.5a1 1 0 0 1 1.414 1.414L8.414 11.5z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                </button>
+            </div>
+	    </div>
+  </div>
+  <div class="right-side">
+  		
+  </div>
+</aside>
+
+<script>
+	$( document ).ready(function() {
+	    var ua = navigator.userAgent.toLowerCase();
+	    var isSafari = ua.indexOf('safari') > 0 && ua.indexOf('chrome') < 0;
+	    var isMobileSafari = isSafari && ua.indexOf('mobile') > 0;
+
+	    $('#drawerEl').drawer({
+	      range: isMobileSafari ? [35, 150] : [0, 150],
+	      threshold: isSafari ? 0 : 10,
+	    })
+	    .on('transitioned.hy.drawer', function(e) {
+	      console.log('hy-drawer transitioned to', e.detail);
+	    });
+
+	    $('#menuEl').click(function (e) {
+	      e.preventDefault();
+	      $('#drawerEl').drawer('toggle');
+	    });
+
+	    $('#menuE2').click(function (e) {
+	      e.preventDefault();
+	      $('#drawerEl').drawer('toggle');
+	    });
+
+	    $('#menuE3').click(function (e) {
+	      e.preventDefault();
+	      $('#drawerEl').drawer('toggle');
+	    });
+
+	    $('#drawerEl_close').click(function (e) {
+	      e.preventDefault();
+	      $('#drawerEl').drawer('toggle');
+	    });
+	});
+</script>

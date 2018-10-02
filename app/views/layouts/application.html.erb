@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Master</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="layout layout-nav-side">
+      
+      <div class="navigation">
+          <div class="" style="width: 304px;">
+              <%= render "partials/navbar" %>
+          </div>
+          <div class="">
+            <%= render "partials/drawerE1" %>
+          </div>
+          <div class="">
+          </div>
+      </div>
+      
+      <div class="wrapper">
+          <header id="aui-message-bar">
+              <% if notice %>
+                <p class="alert alert-success"><%= notice %></p>
+              <% end %>
+              <% if alert %>
+                <p class="alert alert-danger"><%= alert %></p>
+              <% end %>
+          </header>
+          <div class="main-content">
+              <%= yield %>
+          </div>
+      </div>
+      
+      
+    </div>
+    
+  </body>
+</html>
+

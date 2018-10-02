@@ -1,0 +1,87 @@
+<div class="navbar-container">
+	<div class="navbar-main">
+		<div class="navbar navbar-expand-lg sticky-top blue-nav" style="">
+		    <a class="navbar-brand" href="/">
+		    <%= image_tag "logo.svg", :class => "img_preview", :width => "24", :height => "24" %>
+		    </a>
+		    <div class="collapse navbar-collapse flex-column text-white" id="navbar-collapse">
+		    	<div class="nav flex-column nav-pills">
+                    <a class="nav-link"  id="menuEl" href="#drawerEl"><i class="icon-search4"></i></a>
+                    <a class="nav-link" id="menuE2" href="#drawerE1"><i class="icon-add"></i></a>
+                    <a class="nav-link blink skin_handle" href="#"><i class="icon-lightbulb_outline"></i></a>
+                    <a class="nav-link" id="menuE3" href="#drawerE1"><i class="icon-users"></i></a>
+                    <a class="nav-link" id="v-pills-settings-tab" href="#"><i class="icon-settings"></i></a>
+                </div>
+		    </div>
+		    <div class="d-none d-lg-block">
+		        <div class="dropup">
+		            <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		            <% if user_signed_in? %>
+		                <%= image_tag "avatar-male-4.jpg", :class => "avatar", :alt => current_user.email %>
+		            <% else %>
+		            	<%= image_tag "avatar-male-4.jpg", :class => "avatar" %>
+		            <% end %>
+		            </a>
+		            <div class="dropdown-menu">
+		            	<% if user_signed_in? %>
+						  
+						  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %>
+						  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %>
+						<% else %>
+						  <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %>
+						  <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+						<% end %>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="navbar-sub">
+		<div class="menu">
+			<ul class="side-nav">
+				<li class="side-nav-item">
+					<a href="/" class="side-nav-link">
+						<i class="side-nav-icon icon-dashboard"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="side-nav-item">
+					<a href="javascript:;" class="side-nav-link">
+						<i class="side-nav-icon icon-user-circle"></i>
+						<span>Employees</span>
+					</a>
+				</li>
+				<li class="side-nav-item">
+					<a href="/todos" class="side-nav-link">
+						<i class="side-nav-icon icon-folder_open"></i>
+						<span>Job opening</span>
+					</a>
+				</li>
+				<li class="side-nav-item">
+					<a href="javascript:;" class="side-nav-link">
+						<i class="side-nav-icon icon-money2"></i>
+						<span>Payroll</span>
+					</a>
+				</li>
+				<li class="side-nav-item">
+					<a href="javascript:;" class="side-nav-link">
+						<i class="side-nav-icon icon-document-time2"></i>
+						<span>Timesheet</span>
+					</a>
+				</li>
+				<li class="side-nav-item">
+					<a href="javascript:;" class="side-nav-link">
+						<i class="side-nav-icon icon-document-checked2"></i>
+						<span>Survey</span>
+					</a>
+				</li>
+			</ul>
+
+			<hr />
+		</div>
+	</div>
+
+	<div class="navbar-spicer">
+		<button class="arrow-btn" aria-expanded="true"></button>
+	</div>
+</div>
