@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
 	private
 
 		def layout_by_resource
-			if devise_controller?
+			if devise_controller? && resource_name == :user && action_name == 'new'
+				"devise"
+			elsif devise_controller? && resource_name == :user && action_name == 'edit'
 			  "settings"
 			else
 			  "application"

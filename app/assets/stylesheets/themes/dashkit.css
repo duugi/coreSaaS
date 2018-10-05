@@ -1,0 +1,22 @@
+.bg-auth {
+    background-color: #fff;
+    border-top: 2px solid #e3ebf6!important;
+    border-color: #2c7be5!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+.text-muted {
+    color: #95aac9!important;
+}
+
+.mb-5, .my-5 {
+    margin-bottom: 2.25rem!important;
+}
+
+.display-3, .display-4 {
+    font-weight: 600;
+    line-height: 1.1;
+}

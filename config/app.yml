@@ -1,0 +1,18 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  company_name: "Citinet LLC"
+  currency: "MNT"
+  subdomain: "citinet"
+  plan: "Regular"
+  rest_api: ""
+  javascript_api: ""
+  company_email: "info@citinet.mn"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -60,3 +60,12 @@ gem 'devise'
 
 gem 'bootstrap'
 gem 'jquery-rails'
+
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+#gem 'mini_magick', '3.5', :require => 'mini_gmagick'
+
+gem 'storext', '~> 2.2'
+
+gem 'rails-settings-cached', '~> 0.7.1'
+gem 'country_select', '~> 3.1', '>= 3.1.1'

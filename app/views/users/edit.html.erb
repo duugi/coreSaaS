@@ -1,0 +1,37 @@
+<h2>Edit profile</h2>
+
+<%= form_for @user, html: { multipart: true } do |f| %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+<br />
+	<%= f.file_field :avatar %>
+
+<br />
+<br />
+	<%= f.label :language %>
+	<%= f.text_field :language %>
+	<br />
+	<%= f.label :time_zone %>
+	<%= f.text_field :time_zone %>
+	<br />
+	<%= f.label :date_format %>
+	<%= f.text_field :date_format %>
+	<br />
+	<%= f.label :remember_country_selection %>
+	<%= f.check_box :remember_country_selection %>
+	<br />
+	<%= f.label :admin %>
+	<%= f.check_box :admin %>
+	<br />
+	<%= f.label :is_owner %>
+	<%= f.check_box :is_owner %>
+	<br />
+	<%= f.label :is_disable %>
+	<%= f.check_box :is_disable %>
+<br />
+	<%= f.submit "Save Change" %>
+
+	<%= Setting.company_name %>
+
+<% end %>

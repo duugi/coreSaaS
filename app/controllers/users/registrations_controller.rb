@@ -60,7 +60,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def employee
-    
-  end
 end

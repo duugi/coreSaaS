@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Regions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Region name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_regions.each do |admin_region| %>
+      <tr>
+        <td><%= admin_region.region_name %></td>
+        <td><%= link_to 'Show', admin_region %></td>
+        <td><%= link_to 'Edit', edit_admin_region_path(admin_region) %></td>
+        <td><%= link_to 'Destroy', admin_region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Region', new_admin_region_path %>

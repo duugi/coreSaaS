@@ -1,0 +1,6 @@
+<h2>Profile for <%= @user.username %></h2>
+
+<%= avatar_for(@user, {}) %>
+
+<br />
+<%= link_to "Edit", edit_user_path(@user) %>

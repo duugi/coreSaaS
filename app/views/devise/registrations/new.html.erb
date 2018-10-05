@@ -1,29 +1,99 @@
-<h2>Sign up</h2>
+<div class="row align-items-center">
+    <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <!-- Image -->
+      <div class="text-center">
+        <%= image_tag "happiness.svg", :class => "img-fluid", :alt => "..." %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
+      
+      <!-- Heading -->
+      <h1 class="display-4 text-center mb-3">
+        Sign up
+      </h1>
+      
+      <!-- Subheading -->
+      <p class="text-muted text-center mb-5">
+        Free access to our dashboard.
+      </p>
+
+      <!-- Form -->
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <%= devise_error_messages! %>
+
+        <!-- Email address -->
+        <div class="form-group">
+
+          <!-- Label -->
+         
+          <%= f.label :email %><br />
+
+          <!-- Input -->
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "name@address.com" %>
+
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+
+          <!-- Label -->
+          <%= f.label :password %>
+
+          <!-- Input group -->
+          <div class="input-group input-group-merge">
+
+            <!-- Input -->
+
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-appended", placeholder: "Enter your password" %>
+            
+
+            <% if @minimum_password_length %>
+              <div class="invalid-feedback">
+                (<%= @minimum_password_length %> characters minimum)
+              </div>
+            <% end %>
+
+            <!-- Icon -->
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fe fe-eye"></i>
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+
+          <!-- Label -->
+          <%= f.label :password_confirmation %>
+  
+
+          <!-- Input group -->
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-appended", placeholder: "Enter your password again"  %>
+
+          
+
+        </div>
+
+
+
+        <!-- Submit -->
+
+        <%= f.submit "Sign up", class: "btn btn-lg btn-block btn-primary mb-3" %>
+
+        <!-- Link -->
+        <div class="text-center">
+          <small class="text-muted text-center">
+            Already have an account? <%= render "devise/shared/links" %>.
+          </small>
+        </div>
+
+      <% end %>
+
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
